@@ -1,0 +1,8 @@
+.git
+.github
+tests
+.env
+.env.backup
+.env.production
+.env.hostinger
+*.log
