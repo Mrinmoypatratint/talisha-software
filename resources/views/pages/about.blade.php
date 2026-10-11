@@ -87,12 +87,9 @@
             <div class="team-id-grid">
                 @foreach($teamMembers as $member)
                     <div class="team-id-card">
-                        <!-- Top Lanyard Slot -->
-                        <div class="id-card-slot"></div>
-
                         <!-- Brand Logo -->
                         <div class="id-card-brand">
-                            <img src="{{ asset('img/partners/talisha_software_logo.png') }}" alt="Talisha Software" class="id-card-brand-logo" onerror="this.src='{{ asset('img/logo-light-bg.png') }}'">
+                            <img src="{{ asset('img/team/id_card_logo.png') }}" alt="Talisha Software" class="id-card-brand-logo">
                         </div>
 
                         <!-- Central Capsule Portrait Frame -->
