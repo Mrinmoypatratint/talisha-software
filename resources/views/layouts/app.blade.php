@@ -41,14 +41,14 @@
 
     <!-- Flash Alert Messages -->
     @if(session('success'))
-        <div style="position: fixed; top: 90px; right: 24px; z-index: 2000; background: rgba(16, 185, 129, 0.95); backdrop-filter: blur(12px); color: #fff; padding: 16px 24px; border-radius: var(--radius-md); box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: flex; align-items: center; gap: 12px; font-weight: 500; border: 1px solid rgba(255,255,255,0.2);">
+        <div class="flash-alert flash-success">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
             <span>{{ session('success') }}</span>
         </div>
     @endif
 
     @if($errors->any())
-        <div style="position: fixed; top: 90px; right: 24px; z-index: 2000; background: rgba(239, 68, 68, 0.95); backdrop-filter: blur(12px); color: #fff; padding: 16px 24px; border-radius: var(--radius-md); box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: flex; align-items: center; gap: 12px; font-weight: 500; border: 1px solid rgba(255,255,255,0.2);">
+        <div class="flash-alert flash-error">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
             <span>{{ $errors->first() }}</span>
         </div>

@@ -20,13 +20,13 @@
             </p>
 
             <!-- AI Interactive Search Bar -->
-            <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle); backdrop-filter: blur(16px); padding: 8px 12px 8px 20px; border-radius: var(--radius-full); display: flex; align-items: center; gap: 12px; max-width: 540px; margin-bottom: 36px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+            <div class="hero-search-bar">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                <input type="text" id="hero-search-input" placeholder="Ask AI about Agentic workflows, IoT, or Web3..." style="background: transparent; border: none; color: #fff; width: 100%; font-size: 0.95rem; outline: none;">
-                <button type="button" id="voice-search-btn" title="Voice Search" style="background: none; border: none; color: var(--accent-gold); cursor: pointer; padding: 6px; display: flex; align-items: center;">
+                <input type="text" id="hero-search-input" placeholder="Ask AI about Agentic workflows, IoT, or Web3...">
+                <button type="button" id="voice-search-btn" title="Voice Search">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg>
                 </button>
-                <a href="{{ route('solutions') }}" class="btn btn-gold" style="padding: 9px 20px; font-size: 0.85rem; border-radius: var(--radius-full);">Explore</a>
+                <a href="{{ route('solutions') }}" class="btn btn-gold hero-search-btn">Explore</a>
             </div>
 
             <div class="hero-actions">
@@ -141,7 +141,7 @@
 
         <!-- Tab 1: Agentic AI -->
         <div id="tab-ai" class="tab-content active">
-            <div class="glass-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;">
+            <div class="glass-card tab-showcase-card">
                 <div>
                     <span class="badge" style="margin-bottom: 16px;">Autonomous Systems</span>
                     <h3 style="font-size: 2rem; margin-bottom: 16px;">Multi-Agent Orchestration & Reasoning Graphs</h3>
@@ -164,7 +164,7 @@
                     </ul>
                     <a href="{{ route('solutions') }}#agentic-ai" class="btn btn-primary">Discover AI Architecture</a>
                 </div>
-                <div style="background: rgba(0,0,0,0.6); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 30px; font-family: var(--font-mono); font-size: 0.85rem; color: #a3e635;">
+                <div class="terminal-code-box">
                     <div style="color: var(--text-dim); margin-bottom: 12px;">// Agent Execution Trace</div>
                     <div style="color: #60a5fa;">[Agent::Planner] Resolving objective: "Reconcile multi-region ledger"</div>
                     <div style="color: var(--accent-gold);">[Tool::Call] Querying ERP API endpoint (cluster-ap-south)...</div>
@@ -178,7 +178,7 @@
 
         <!-- Tab 2: Web3 -->
         <div id="tab-web3" class="tab-content">
-            <div class="glass-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;">
+            <div class="glass-card tab-showcase-card">
                 <div>
                     <span class="badge" style="margin-bottom: 16px; color: var(--accent-red); border-color: rgba(255,59,48,0.3);">Cryptographic Trust</span>
                     <h3 style="font-size: 2rem; margin-bottom: 16px;">Immutable Smart Contracts & Zero-Knowledge Rollups</h3>
@@ -197,7 +197,7 @@
                     </ul>
                     <a href="{{ route('solutions') }}#web3" class="btn btn-primary">Explore Web3 Systems</a>
                 </div>
-                <div style="background: rgba(0,0,0,0.6); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 30px; font-family: var(--font-mono); font-size: 0.85rem; color: #38bdf8;">
+                <div class="terminal-code-box">
                     <div style="color: var(--text-dim); margin-bottom: 12px;">// Smart Contract Verification</div>
                     <div style="color: #fbbf24;">contract IndustrialEscrow is ReentrancyGuard {</div>
                     <div style="padding-left: 16px; color: #f472b6;">event EscrowFinalized(bytes32 indexed custodyHash);</div>
@@ -212,7 +212,7 @@
 
         <!-- Tab 3: Industrial IoT -->
         <div id="tab-iot" class="tab-content">
-            <div class="glass-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;">
+            <div class="glass-card tab-showcase-card">
                 <div>
                     <span class="badge" style="margin-bottom: 16px; color: var(--accent-orange); border-color: rgba(255,122,26,0.3);">Physical Computing</span>
                     <h3 style="font-size: 2rem; margin-bottom: 16px;">Edge Telemetry & SCADA Modernization</h3>
@@ -231,7 +231,7 @@
                     </ul>
                     <a href="{{ route('solutions') }}#iot" class="btn btn-primary">Explore Industrial IoT</a>
                 </div>
-                <div style="background: rgba(0,0,0,0.6); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 30px; font-family: var(--font-mono); font-size: 0.85rem; color: #fbbf24;">
+                <div class="terminal-code-box">
                     <div style="color: var(--text-dim); margin-bottom: 12px;">// Telemetry Telemetry Stream</div>
                     <div style="color: #34d399;">NODE_ID: TR-8041 (Durgapur Plant Turbine #3)</div>
                     <div style="color: #60a5fa;">Sampling Rate: 1,000 Hz &bull; Vibration: 0.014g (Normal)</div>
@@ -335,7 +335,7 @@
                 <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.7; margin-bottom: 30px;">
                     We are not an off-the-shelf agency. We are an elite software research and development pod that embeds alongside your leadership to solve high-stakes technological bottlenecks.
                 </p>
-                <div style="display: flex; gap: 16px;">
+                <div class="why-choose-btns" style="display: flex; gap: 16px;">
                     <a href="{{ route('about') }}" class="btn btn-outline">Our Culture & Story</a>
                     <a href="{{ route('lead.create') }}" class="btn btn-primary">Schedule Discovery</a>
                 </div>

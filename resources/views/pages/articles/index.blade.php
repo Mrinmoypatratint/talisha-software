@@ -17,8 +17,8 @@
         </div>
 
         <!-- Filter & Search Bar -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px; flex-wrap: wrap; gap: 20px;">
-            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <div class="article-filter-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px; flex-wrap: wrap; gap: 20px;">
+            <div class="article-category-chips" style="display: flex; gap: 10px; flex-wrap: wrap;">
                 <a href="{{ route('articles.index') }}" class="tab-btn {{ !request('category') ? 'active' : '' }}">All Topics</a>
                 @foreach($categories as $cat)
                     <a href="{{ route('articles.index', ['category' => $cat->slug]) }}" class="tab-btn {{ request('category') === $cat->slug ? 'active' : '' }}">
@@ -27,7 +27,7 @@
                 @endforeach
             </div>
 
-            <form action="{{ route('articles.index') }}" method="GET" style="display: flex; gap: 10px; max-width: 320px; width: 100%;">
+            <form action="{{ route('articles.index') }}" method="GET" class="article-search-form" style="display: flex; gap: 10px; max-width: 320px; width: 100%;">
                 <input type="text" name="search" value="{{ request('search') }}" placeholder="Search articles..." class="form-control" style="padding: 10px 16px;">
                 <button type="submit" class="btn btn-primary" style="padding: 10px 20px;">Search</button>
             </form>

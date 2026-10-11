@@ -17,20 +17,65 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 2. Mobile Menu Toggle
-    const toggleBtn = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    const toggleBtn = document.getElementById('menuToggleBtn') || document.querySelector('.menu-toggle');
+    const navMenu = document.getElementById('primaryNavMenu') || document.querySelector('.nav-menu');
+    const backdrop = document.getElementById('mobileNavBackdrop');
+
+    function closeMobileMenu() {
+        if (!navMenu) return;
+        navMenu.classList.remove('open');
+        if (toggleBtn) {
+            toggleBtn.classList.remove('active');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+        }
+        if (backdrop) backdrop.classList.remove('active');
+        document.body.classList.remove('body-scroll-lock');
+    }
+
+    function openMobileMenu() {
+        if (!navMenu) return;
+        navMenu.classList.add('open');
+        if (toggleBtn) {
+            toggleBtn.classList.add('active');
+            toggleBtn.setAttribute('aria-expanded', 'true');
+        }
+        if (backdrop) backdrop.classList.add('active');
+        document.body.classList.add('body-scroll-lock');
+    }
+
     if (toggleBtn && navMenu) {
-        toggleBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('open');
-            const isOpen = navMenu.classList.contains('open');
-            toggleBtn.setAttribute('aria-expanded', isOpen);
+        toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (navMenu.classList.contains('open')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
         });
 
+        if (backdrop) {
+            backdrop.addEventListener('click', closeMobileMenu);
+        }
+
         // Close on link click
-        navMenu.querySelectorAll('.nav-link').forEach(link => {
+        navMenu.querySelectorAll('.nav-link, .nav-mobile-cta a').forEach(link => {
             link.addEventListener('click', () => {
-                navMenu.classList.remove('open');
+                closeMobileMenu();
             });
+        });
+
+        // Close on ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close on resize above mobile breakpoint
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 992 && navMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
         });
     }
 
