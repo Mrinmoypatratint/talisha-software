@@ -60,18 +60,10 @@
             <textarea id="description" name="description" class="form-control" rows="3" placeholder="Brief 1-2 sentence description of their core role and contribution...">{{ old('description') }}</textarea>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 16px;">
-            <!-- Employee ID -->
-            <div class="form-group">
-                <label class="form-label" for="employee_id">Employee ID (Optional)</label>
-                <input type="text" id="employee_id" name="employee_id" class="form-control" value="{{ old('employee_id') }}" placeholder="e.g. TS-EMP-0006">
-            </div>
-
-            <!-- Display Order -->
-            <div class="form-group">
-                <label class="form-label" for="display_order">Display Order</label>
-                <input type="number" id="display_order" name="display_order" class="form-control" value="{{ old('display_order', 0) }}" placeholder="0">
-            </div>
+        <!-- Display Order -->
+        <div class="form-group" style="margin-top: 16px;">
+            <label class="form-label" for="display_order">Display Order</label>
+            <input type="number" id="display_order" name="display_order" class="form-control" value="{{ old('display_order', 0) }}" placeholder="0" style="max-width: 200px;">
         </div>
 
         <!-- Active Toggle -->

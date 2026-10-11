@@ -58,7 +58,6 @@ class TeamController extends Controller
             'designation' => $validated['designation'],
             'photo' => $photoPath,
             'description' => $validated['description'] ?? null,
-            'employee_id' => $validated['employee_id'] ?? ('TS-EMP-' . str_pad(TeamMember::max('id') + 1, 4, '0', STR_PAD_LEFT)),
             'display_order' => $validated['display_order'] ?? 0,
             'is_active' => $request->has('is_active') ? true : false,
         ]);
@@ -112,7 +111,6 @@ class TeamController extends Controller
             'designation' => $validated['designation'],
             'photo' => $photoPath,
             'description' => $validated['description'] ?? null,
-            'employee_id' => $validated['employee_id'] ?? $team->employee_id,
             'display_order' => $validated['display_order'] ?? 0,
             'is_active' => $request->has('is_active') ? true : false,
         ]);

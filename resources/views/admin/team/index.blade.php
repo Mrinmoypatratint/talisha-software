@@ -19,7 +19,6 @@
             <tr>
                 <th>Member</th>
                 <th>Designation</th>
-                <th>Employee ID</th>
                 <th>Order</th>
                 <th>Status</th>
                 <th>Actions</th>
@@ -52,9 +51,6 @@
                             {{ $member->designation }}
                         </span>
                     </td>
-                    <td style="font-family: monospace; font-size: 0.9rem; color: var(--text-muted);">
-                        {{ $member->employee_id ?: '—' }}
-                    </td>
                     <td style="font-size: 0.9rem; color: var(--text-dim);">
                         {{ $member->display_order }}
                     </td>
@@ -77,7 +73,7 @@
                 </tr>
             @empty
                 <tr>
-                    <td colspan="6" style="text-align: center; padding: 40px; color: var(--text-muted);">
+                    <td colspan="5" style="text-align: center; padding: 40px; color: var(--text-muted);">
                         No team members registered yet. Click "+ Add Team Member" to create one.
                     </td>
                 </tr>

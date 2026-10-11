@@ -132,10 +132,6 @@
                                     {{ $member->description }}
                                 </p>
                             @endif
-
-                            <div class="id-card-meta">
-                                <div>Employee ID: <span>{{ $member->employee_id ?: 'TS-EMP-'.str_pad($member->id, 4, '0', STR_PAD_LEFT) }}</span></div>
-                            </div>
                         </div>
 
                         <!-- Footer & Multi-Color Ribbon -->
