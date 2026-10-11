@@ -250,21 +250,12 @@ class DatabaseSeeder extends Seeder
         // 8. Team Members (Styled as Official ID Badge cards)
         $teamMembers = [
             [
-                'name' => 'Krishiv Dutta',
-                'designation' => 'HR Co-ordinator',
-                'photo' => 'img/team/krishiv_dutta.png',
-                'description' => 'Directing talent operations, team culture, and engineering team scaling across all tech hubs.',
-                'employee_id' => 'TS-EMP-0006',
-                'display_order' => 1,
-                'is_active' => true,
-            ],
-            [
                 'name' => 'Abir Ghosh',
                 'designation' => 'Founder & CEO',
                 'photo' => 'img/team/abir_ghosh.png',
                 'description' => 'Guiding product strategy, enterprise AI architectures, and international client partnerships.',
                 'employee_id' => 'TS-EMP-0001',
-                'display_order' => 2,
+                'display_order' => 1,
                 'is_active' => true,
             ],
             [
@@ -273,6 +264,15 @@ class DatabaseSeeder extends Seeder
                 'photo' => 'img/team/pijush_pal.png',
                 'description' => 'Architecting distributed systems, Web3 protocols, and resilient cloud infrastructure.',
                 'employee_id' => 'TS-EMP-0002',
+                'display_order' => 2,
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Mrinmoy Patra',
+                'designation' => 'Head of Technology',
+                'photo' => 'img/team/mrinmoy_patra.png',
+                'description' => 'Mrinmoy is a visionary Head of Technology who architects scalable infrastructure and drives digital transformation by aligning tech roadmaps with business goals.',
+                'employee_id' => 'TS-EMP-0005',
                 'display_order' => 3,
                 'is_active' => true,
             ],
@@ -292,6 +292,15 @@ class DatabaseSeeder extends Seeder
                 'description' => 'Engineering autonomous LLM reasoning agents, neural pipelines, and edge compute models.',
                 'employee_id' => 'TS-EMP-0004',
                 'display_order' => 5,
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Krishiv Dutta',
+                'designation' => 'HR Co-ordinator',
+                'photo' => 'img/team/krishiv_dutta.png',
+                'description' => 'Directing talent operations, team culture, and engineering team scaling across all tech hubs.',
+                'employee_id' => 'TS-EMP-0006',
+                'display_order' => 6,
                 'is_active' => true,
             ],
         ];

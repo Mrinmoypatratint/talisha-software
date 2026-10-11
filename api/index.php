@@ -29,6 +29,12 @@ $sourceDb = __DIR__ . '/../database/database.sqlite';
 
 $needsInit = !file_exists($targetDb) || @filesize($targetDb) === 0;
 
+if (!$needsInit && file_exists($sourceDb) && file_exists($targetDb)) {
+    if (@filemtime($sourceDb) > @filemtime($targetDb)) {
+        $needsInit = true;
+    }
+}
+
 if (!$needsInit && file_exists($targetDb)) {
     try {
         $pdo = new PDO('sqlite:' . $targetDb);
