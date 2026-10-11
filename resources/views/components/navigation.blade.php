@@ -28,9 +28,10 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
             <button class="menu-toggle" id="menuToggleBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primaryNavMenu">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
+                <span class="grid-box"></span>
+                <span class="grid-box"></span>
+                <span class="grid-box active-box"></span>
+                <span class="grid-box"></span>
             </button>
         </div>
     </div>

@@ -288,49 +288,68 @@ h1, h2, h3, h4, h5, h6 {
   gap: 16px;
 }
 
-/* Mobile Nav Toggle & Animated Hamburger */
+/* Mobile Nav Toggle & 2x2 Grid Icon */
 .menu-toggle {
   display: none;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   color: #fff;
   cursor: pointer;
-  padding: 10px;
+  padding: 8px;
   width: 44px;
   height: 44px;
-  flex-direction: column;
-  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
   align-items: center;
-  gap: 5px;
-  transition: all 0.3s var(--ease-smooth);
+  justify-items: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
 }
 
 .menu-toggle:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(245, 166, 35, 0.45);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 122, 26, 0.5);
+  box-shadow: 0 0 16px rgba(255, 122, 26, 0.3);
 }
 
-.hamburger-bar {
+.menu-toggle:active {
+  transform: scale(0.92);
+}
+
+.menu-toggle .grid-box {
   display: block;
-  width: 22px;
-  height: 2px;
-  background-color: #ffffff;
-  border-radius: 2px;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+  width: 10px;
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 3.5px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.menu-toggle.active .hamburger-bar:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+.menu-toggle .grid-box.active-box {
+  background: #ff7a1a;
+  box-shadow: 0 0 8px rgba(255, 122, 26, 0.85);
 }
 
-.menu-toggle.active .hamburger-bar:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
+.menu-toggle:hover .grid-box.active-box {
+  box-shadow: 0 0 14px rgba(255, 122, 26, 1);
 }
 
-.menu-toggle.active .hamburger-bar:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+/* Open State Animation */
+.menu-toggle.active {
+  background: rgba(255, 122, 26, 0.12);
+  border-color: #ff7a1a;
+  box-shadow: 0 0 20px rgba(255, 122, 26, 0.45);
+}
+
+.menu-toggle.active .grid-box {
+  border-radius: 50%;
+  transform: scale(0.85);
+}
+
+.menu-toggle.active .grid-box.active-box {
+  transform: scale(1.15);
+  box-shadow: 0 0 14px rgba(255, 122, 26, 1);
 }
 
 /* Mobile Nav Backdrop */
@@ -1478,7 +1497,7 @@ textarea.form-control {
 @media (max-width: 992px) {
   /* Navigation */
   .menu-toggle {
-    display: flex;
+    display: grid;
   }
 
   .nav-header-cta {
