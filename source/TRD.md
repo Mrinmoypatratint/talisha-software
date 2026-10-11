@@ -4,10 +4,11 @@
 
 | Field | Detail |
 |---|---|
-| **Document Version** | 1.0 |
-| **Date** | 2026-10-11 |
-| **Stack** | PHP 8.2+ · Laravel 11 · MySQL 8.0 · Hostinger Deployment |
-| **Status** | Draft |
+| **Document Version** | 2.0 (Production Stable) |
+| **Date** | October 2026 |
+| **Stack** | PHP 8.4 · Laravel 13 · SQLite / MySQL · Vercel Serverless |
+| **Status** | Production Active |
+| **Production URL** | [https://talisha-software.vercel.app](https://talisha-software.vercel.app) |
 
 ---
 
@@ -15,24 +16,24 @@
 
 ```mermaid
 graph TB
-    subgraph "Client (Browser)"
+    subgraph "Client (Browser / Mobile)"
         A[HTML5 / Blade Templates]
-        B[Vanilla CSS + GSAP + Lenis]
-        C[Three.js / Spline Viewer]
-        D[Vanilla JavaScript / Alpine.js]
+        B[Vanilla CSS - Obsidian Precision System]
+        C[Modern Typography - Plus Jakarta Sans & Outfit]
+        D[Vanilla JavaScript / Interactive Accordions & Modals]
     end
     
-    subgraph "Server (Hostinger)"
-        E[Nginx / LiteSpeed]
-        F[PHP 8.2+ / Laravel 11]
-        G[MySQL 8.0]
-        H[Redis - Session/Cache]
+    subgraph "Serverless Edge / Vercel"
+        E[Vercel Serverless Gateway]
+        F[PHP 8.4 Runtime / Laravel 13]
+        G[SQLite Persistent DB / Optional MySQL 8.0]
+        H[Session & Cache Storage]
     end
     
-    subgraph "External Services"
-        I[SMTP - Hostinger Email]
-        J[Google Analytics 4]
-        K[Cloudflare CDN]
+    subgraph "External Integrations"
+        I[Corporate SMTP / Email Notifications]
+        J[Google Analytics / Meta Tracking]
+        K[Vercel Global CDN]
     end
     
     A --> F

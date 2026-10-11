@@ -45,3 +45,28 @@ php artisan boost:install
 
 Boost replaces these bootstrap instructions with guidelines tailored to the application. After installation, read `AGENTS.md` again and continue with the user's original request using the generated guidelines.
 </laravel-boost-guidelines>
+
+---
+
+# Talisha Software — Engineering Guidelines for Agents
+
+### 1. Design Rules & Quality Standards
+- **No Glassmorphism:** Never use `backdrop-filter: blur(...)` or semi-transparent cards. Use solid `#11131a` surfaces, `#1e2230` borders, and physical depth shadows.
+- **No AI-Template Visuals:** Avoid generic Inter fonts, pulsating radar dots, and 9999px pill badges. Use `Plus Jakarta Sans` and `Outfit`.
+- **Mobile Menu Toggle:** The menu icon in `resources/views/components/navigation.blade.php` must be a 2×2 rounded box grid with the 3rd square (`.active-box`) styled in vibrant orange (`#ff7a1a`).
+- **Team ID Card Background:** Use `public/img/team/id_wave_transparent.png` with a clean transparent top area.
+
+### 2. Official Team Roster Order
+1. Abir Ghosh (CEO)
+2. Pijush Pal (CTO)
+3. Mrinmoy Patra (Lead Architect)
+4. Shreya Sarkar (UI/UX Director)
+5. Mantaar Singh (Senior AI Researcher)
+6. Krishiv Dutta (Full-Stack Engineer)
+
+### 3. Testing Standard
+Always verify changes with:
+```bash
+php artisan test
+```
+All 15 tests and 109 assertions must remain green.

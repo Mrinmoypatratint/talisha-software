@@ -4,26 +4,26 @@
 
 | Field | Detail |
 |---|---|
-| **Document Version** | 1.0 |
-| **Date** | 2026-10-11 |
-| **Design Benchmark** | Apple · NVIDIA · Stripe |
-| **Status** | Draft |
+| **Document Version** | 2.0 (Production Stable) |
+| **Date** | October 2026 |
+| **Design Benchmark** | Obsidian Precision · Apple · Linear |
+| **Status** | Production Implemented |
 
 ---
 
-## 1. Design Philosophy
+## 1. Design Philosophy: Obsidian Precision
 
-> *"Every pixel must justify its existence. Every animation must serve the narrative. Every interaction must feel intentional and premium."*
+> *"Every pixel must justify its existence. High-contrast solid dark surfaces, physical boundary depth, and human-crafted typography deliver an authentic executive presence that completely avoids generic AI-template aesthetics."*
 
 ### Core Principles
 
 | Principle | Description |
 |---|---|
-| **Cinematic Storytelling** | The website should feel like watching a tech product reveal — each scroll should unveil the next chapter |
-| **Dark-First Luxury** | Deep blacks with strategic pops of amber/gold create a premium, high-tech aesthetic |
-| **Motion with Purpose** | Every animation guides the eye, reveals content, or reinforces brand identity — never gratuitous |
-| **Spatial Depth** | 3D elements, glassmorphism, and layered parallax create real dimensionality |
-| **Breathable Layout** | Generous whitespace (dark-space) lets premium content shine |
+| **Zero Glassmorphism** | Absolute elimination of blurry frosted glass cards and semi-transparent backgrounds; all surfaces are solid obsidian panels (`#11131a`, `#141722`) |
+| **Physical Depth & Crisp Borders** | Sharp `#1e2230` borders and `0 8px 24px rgba(0,0,0,0.45)` tactile drop shadows provide true architectural depth |
+| **Bespoke Human Typography** | `Plus Jakarta Sans` for body copy and `Outfit` for display headings replace generic system fallbacks and robotic monospace fonts |
+| **Architectural Badges** | Clean 6px/8px rectangular badges with steady accent pips replace pulsating radar dots and rounded 9999px capsule pills |
+| **Signature 2×2 Mobile Menu** | 2×2 rounded box grid toggle with bottom-left accent orange square (`#ff7a1a`) replaces generic 3-line hamburgers |
 
 ---
 
@@ -72,8 +72,10 @@
 /* CTA button gradient */
 --gradient-cta: linear-gradient(135deg, #ff3b30, #ff7a1a);
 
-/* Glass surface */
---gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+/* Solid Obsidian Panel */
+--surface-obsidian: #11131a;
+--surface-elevated: #141722;
+--border-obsidian: #1e2230;
 
 /* Bottom strip (Impact section) */
 --gradient-strip: linear-gradient(to top, #fe9d00 0%, rgba(230,150,22,0.85) 40%, transparent 100%);
@@ -88,9 +90,9 @@
 
 | Role | Font | Weight | Source |
 |---|---|---|---|
-| **Primary** | Inter | 300, 400, 500, 600, 700 | Google Fonts |
-| **Fallback** | Poppins | 300, 400, 500, 600, 700 | Google Fonts (existing brand) |
-| **Mono** | JetBrains Mono | 400, 500 | Google Fonts (code snippets) |
+| **Body & UI** | Plus Jakarta Sans | 400, 500, 600, 700 | Google Fonts |
+| **Headings & Display** | Outfit | 500, 600, 700, 800 | Google Fonts |
+| **Legacy Brand** | Poppins | 400, 500, 600, 700 | Google Fonts (existing brand) |
 
 #### Type Scale (Desktop)
 

@@ -4,20 +4,21 @@
 
 | Field | Detail |
 |---|---|
-| **Document Version** | 1.0 |
-| **Date** | 2026-10-11 |
+| **Document Version** | 2.0 (Production Stable) |
+| **Date** | October 2026 |
 | **Author** | Engineering Team |
-| **Status** | Draft — Awaiting Stakeholder Approval |
+| **Status** | Approved & Deployed to Production |
 | **Project Codename** | **Project Apex** |
+| **Production URL** | [https://talisha-software.vercel.app](https://talisha-software.vercel.app) |
 
 ---
 
 ## 1. Executive Summary
 
-Talisha Software is rebuilding its web presence from a static HTML site to a **world-class, 3D-animated, immersive web application** comparable to the top 3 global tech companies (Apple, Google, NVIDIA). The new website will serve as the company's primary digital storefront — communicating its expertise in **Agentic AI, Web3, Blockchain, IoT, and Enterprise Digital Transformation** with a level of visual polish and interactivity that positions Talisha Software as a premium technology partner.
+Talisha Software has successfully rebuilt its web presence from a static HTML site to a **world-class, high-performance, dark-mode web application and content management system**. The platform serves as the company's primary digital storefront and client lead engine — communicating its expertise in **Agentic AI, Web3, Blockchain, IoT, and Enterprise Digital Transformation** with bespoke executive polish.
 
 > [!IMPORTANT]
-> The website must feel like visiting **apple.com meets nvidia.com** — cinematic scroll-driven 3D animations, buttery smooth transitions, glassmorphism, and immersive storytelling.
+> The design system utilizes an **Obsidian Precision Solid Dark UI** standard: zero glassmorphism, zero generic AI-template looks, physical depth shadows, and bespoke human-crafted typography (`Plus Jakarta Sans` + `Outfit`).
 
 ---
 
@@ -179,17 +180,19 @@ The centerpiece. Must deliver a **cinematic first impression**.
 ## 7. Design Requirements
 
 ### 7.1 Design Language
-
+ 
 | Aspect | Specification |
 |---|---|
-| **Primary Theme** | Dark Mode (Cinematic Black: `#000000` to `#0a0a0a`) |
-| **Accent Color 1** | Amber/Gold: `#f5a623` (existing brand color) |
-| **Accent Color 2** | Hot Red: `#ff3b30` (CTA buttons) |
-| **Accent Color 3** | Electric Orange: `#ff7a1a` (hover/glow effects) |
-| **Typography** | Primary: `Inter` / `Poppins` — Headings: 700 weight, Body: 400 |
-| **Border Radius** | Cards: 20-30px, Buttons: 12-30px, Full round: 50% |
-| **Glassmorphism** | `backdrop-filter: blur(12-20px)` with semi-transparent backgrounds |
-| **Shadows** | Colored glow shadows (`box-shadow` with accent color at 0.3-0.8 opacity) |
+| **Primary Theme** | Dark Mode (Obsidian Deep Base: `#06070a`) |
+| **Card / Surface** | Solid Obsidian: `#11131a`, Elevated: `#141722` (No glassmorphism / No transparency blur) |
+| **Borders & Dividers** | Physical subtle boundary lines: `#1e2230` |
+| **Accent Color 1** | Primary Brand Orange: `#ff7a1a` (Hover glows, active toggles) |
+| **Accent Color 2** | Warm Gold: `#f5a623` (Top accent line on hover) |
+| **Accent Color 3** | Electric Blue: `#3b82f6` (Highlights, stats) |
+| **Typography** | Body: `Plus Jakarta Sans` · Headings: `Outfit` · Legacy Brand: `Poppins` |
+| **Border Radius** | Cards: 16-24px, Badges: 6-8px architectural tags (No 9999px pills) |
+| **Mobile Menu** | 2×2 rounded box grid toggle with signature bottom-left orange box (`#ff7a1a`) |
+| **Shadows** | Tactile depth drop shadows (`0 8px 24px rgba(0,0,0,0.45)`) |
 
 ### 7.2 Animation Standards (from PDF Resource Vault)
 
