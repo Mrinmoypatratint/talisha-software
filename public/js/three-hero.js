@@ -21,9 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const windowHalfY = window.innerHeight / 2;
 
     function init() {
-        // Scene Setup
+        // Scene Setup (Transparent without murky fog for crystal-clear background flare)
         scene = new THREE.Scene();
-        scene.fog = new THREE.FogExp2(0x030305, 0.0018);
 
         // Camera Setup
         camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 2000);

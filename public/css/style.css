@@ -77,14 +77,32 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: var(--bg-primary);
+  background-color: #050608;
   background-image: 
-    radial-gradient(ellipse 70% 45% at 50% 0%, #0d101a 0%, transparent 70%),
-    radial-gradient(ellipse 50% 35% at 85% 55%, #120e14 0%, transparent 60%);
+    radial-gradient(ellipse 75% 60% at 0% 0%, rgba(255, 122, 26, 0.42) 0%, rgba(255, 85, 0, 0.20) 25%, rgba(235, 55, 0, 0.06) 50%, transparent 72%),
+    radial-gradient(circle at 100% 85%, rgba(255, 122, 26, 0.08) 0%, transparent 45%);
   background-attachment: fixed;
   color: var(--text-secondary);
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* Ambient Right Dot Matrix Effect */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 52vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(rgba(245, 166, 35, 0.28) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  background-position: right top;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0.75) 60%, rgba(0, 0, 0, 1) 100%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0.75) 60%, rgba(0, 0, 0, 1) 100%);
 }
 
 a {
@@ -436,7 +454,7 @@ body.body-scroll-lock {
   transform: translateY(-2px);
 }
 
-/* Hero Section */
+/* Hero Section — Optical Top-Left Flare & Right Dot Matrix Effect */
 .hero-section {
   position: relative;
   min-height: 100vh;
@@ -445,6 +463,45 @@ body.body-scroll-lock {
   padding-top: 120px;
   padding-bottom: 60px;
   overflow: hidden;
+  background-color: #050608;
+  background-image: 
+    radial-gradient(ellipse 85% 70% at -5% -5%, rgba(255, 122, 26, 0.52) 0%, rgba(255, 80, 0, 0.25) 28%, rgba(230, 45, 0, 0.08) 52%, transparent 75%),
+    url('../img/hero_flare_dots.webp');
+  background-repeat: no-repeat;
+  background-position: top left, center right;
+  background-size: cover, cover;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -160px;
+  left: -160px;
+  width: 720px;
+  height: 720px;
+  background: radial-gradient(circle, rgba(255, 122, 26, 0.38) 0%, rgba(255, 75, 0, 0.16) 32%, transparent 68%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 56%;
+  pointer-events: none;
+  z-index: 1;
+  background-image: radial-gradient(rgba(245, 166, 35, 0.35) 1.6px, transparent 1.6px);
+  background-size: 26px 26px;
+  background-position: right center;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0.85) 65%, rgba(0, 0, 0, 1) 100%),
+                      linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0.85) 65%, rgba(0, 0, 0, 1) 100%),
+              linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%);
 }
 
 #three-canvas-container {
@@ -1862,6 +1919,14 @@ textarea.form-control {
   .hero-actions {
     flex-direction: column;
     width: 100%;
+  }
+
+  /* Ambient Dot Matrix Mobile Scale */
+  body::after,
+  .hero-section::after {
+    width: 65vw;
+    opacity: 0.5;
+    background-size: 20px 20px;
   }
 
   .hero-actions .btn {
