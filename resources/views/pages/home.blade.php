@@ -19,10 +19,10 @@
                 We empower forward-thinking enterprises with autonomous multi-agent intelligence, immutable Web3 ecosystems, and resilient Industrial IoT architectures.
             </p>
 
-            <!-- AI Interactive Search Bar -->
+            <!-- Enterprise Solutions Search Bar -->
             <div class="hero-search-bar">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                <input type="text" id="hero-search-input" placeholder="Ask AI about Agentic workflows, IoT, or Web3...">
+                <input type="text" id="hero-search-input" placeholder="Search enterprise software, Web3, IoT & solutions...">
                 <button type="button" id="voice-search-btn" title="Voice Search">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg>
                 </button>

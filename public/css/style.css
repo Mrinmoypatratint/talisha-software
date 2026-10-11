@@ -4,7 +4,7 @@
    Pure Vanilla CSS Architecture
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
   /* Colors */
@@ -37,10 +37,11 @@
   --glow-orange: 0 0 35px rgba(255, 122, 26, 0.25);
   --glow-red: 0 0 30px rgba(255, 59, 48, 0.3);
 
-  /* Typography */
-  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: 'Poppins', var(--font-main);
-  --font-mono: 'JetBrains Mono', monospace;
+  /* Typography — Human-crafted, non-AI typography pairing */
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'Plus Jakarta Sans', monospace;
 
   /* Transitions */
   --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
@@ -109,40 +110,44 @@ img {
   padding-right: 24px;
 }
 
-/* Typography Utility */
+/* Typography Utility — Modern Refined Editorial Tech Style */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   color: var(--text-primary);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  letter-spacing: -0.015em;
+  line-height: 1.22;
+  font-weight: 700;
 }
 
 .text-gradient-gold {
-  background: linear-gradient(135deg, #ffffff 20%, #f5a623 80%, #ff7a1a 100%);
+  background: linear-gradient(135deg, #ffffff 10%, #ffd066 45%, #f5a623 80%, #ff8c2b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-red {
-  background: linear-gradient(135deg, #ffffff 20%, #ff3b30 80%, #ff7a1a 100%);
+  background: linear-gradient(135deg, #ffffff 10%, #ff6b64 50%, #ff3b30 85%, #e0281e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/* Badge / Overline Tag — Clean, architectural, non-AI styling */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
-  background: rgba(245, 166, 35, 0.1);
-  border: 1px solid rgba(245, 166, 35, 0.3);
-  border-radius: var(--radius-full);
-  font-size: 0.85rem;
-  font-weight: 500;
+  background: rgba(245, 166, 35, 0.08);
+  border: 1px solid rgba(245, 166, 35, 0.22);
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
   color: var(--accent-gold);
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  transition: var(--transition-fast);
 }
 
 .badge::before {
@@ -151,13 +156,8 @@ h1, h2, h3, h4, h5, h6 {
   height: 6px;
   border-radius: 50%;
   background: var(--accent-gold);
-  box-shadow: 0 0 10px var(--accent-gold);
-  animation: pulse-dot 2s infinite;
-}
-
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.8); }
+  box-shadow: 0 0 6px rgba(245, 166, 35, 0.5);
+  opacity: 0.9;
 }
 
 /* Header & Navigation */
@@ -451,19 +451,23 @@ body.body-scroll-lock {
 }
 
 .hero-title {
-  font-size: clamp(2.8rem, 6.5vw, 4.8rem);
-  font-weight: 800;
-  line-height: 1.08;
-  margin-top: 24px;
-  margin-bottom: 24px;
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 5.8vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -0.015em;
+  margin-top: 22px;
+  margin-bottom: 22px;
 }
 
 .hero-subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
-  color: var(--text-secondary);
-  margin-bottom: 36px;
+  font-family: var(--font-main);
+  font-size: clamp(1.05rem, 1.8vw, 1.22rem);
+  color: #cbd5e1;
+  margin-bottom: 34px;
   max-width: 680px;
-  line-height: 1.65;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
 /* AI Interactive Search Bar */
