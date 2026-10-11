@@ -1,0 +1,522 @@
+@extends('layouts.app')
+
+@section('title', 'Talisha Software — Agentic AI & Enterprise Engineering')
+
+@section('content')
+<!-- ==========================================
+     HERO SECTION WITH 3D WEBGL NEXUS
+     ========================================== -->
+<section class="hero-section">
+    <div id="three-canvas-container"></div>
+
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="hero-content">
+            <span class="badge">Next-Generation Engineering</span>
+            <h1 class="hero-title">
+                Architecting <span class="text-gradient-gold">Agentic AI</span> & Enterprise Scalability.
+            </h1>
+            <p class="hero-subtitle">
+                We empower forward-thinking enterprises with autonomous multi-agent intelligence, immutable Web3 ecosystems, and resilient Industrial IoT architectures.
+            </p>
+
+            <!-- AI Interactive Search Bar -->
+            <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle); backdrop-filter: blur(16px); padding: 8px 12px 8px 20px; border-radius: var(--radius-full); display: flex; align-items: center; gap: 12px; max-width: 540px; margin-bottom: 36px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                <input type="text" id="hero-search-input" placeholder="Ask AI about Agentic workflows, IoT, or Web3..." style="background: transparent; border: none; color: #fff; width: 100%; font-size: 0.95rem; outline: none;">
+                <button type="button" id="voice-search-btn" title="Voice Search" style="background: none; border: none; color: var(--accent-gold); cursor: pointer; padding: 6px; display: flex; align-items: center;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg>
+                </button>
+                <a href="{{ route('solutions') }}" class="btn btn-gold" style="padding: 9px 20px; font-size: 0.85rem; border-radius: var(--radius-full);">Explore</a>
+            </div>
+
+            <div class="hero-actions">
+                <a href="{{ route('lead.create') }}" class="btn btn-primary">
+                    Initiate Project
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="{{ route('solutions') }}" class="btn btn-outline">
+                    View Solutions
+                </a>
+                <a href="{{ route('contact') }}" class="btn btn-glow">
+                    Direct CTO Line
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     PARTNER LOGO MARQUEE TICKER
+     ========================================== -->
+<section class="partner-section">
+    <div class="container" style="margin-bottom: 24px; text-align: center;">
+        <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-dim); font-weight: 600; display: inline-flex; align-items: center; gap: 10px;">
+            <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-gold); box-shadow: 0 0 8px var(--accent-gold);"></span>
+            Trusted by Visionary Organizations Across 2+ Continents
+            <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-gold); box-shadow: 0 0 8px var(--accent-gold);"></span>
+        </span>
+    </div>
+    <div class="partner-marquee">
+        <div class="partner-track">
+            @foreach($partners as $partner)
+                <a href="{{ $partner->website_url ?: '#' }}" class="partner-item" title="{{ $partner->name }}" @if($partner->website_url && $partner->website_url !== '#') target="_blank" rel="noopener noreferrer" @endif>
+                    @if($partner->logo_path)
+                        <img src="{{ asset($partner->logo_path) }}" alt="{{ $partner->name }}" class="partner-logo-img">
+                    @else
+                        <span style="display: inline-block; width: 8px; height: 8px; background: var(--accent-gold); border-radius: 50%;"></span>
+                        <span class="partner-name">{{ $partner->name }}</span>
+                    @endif
+                </a>
+            @endforeach
+            <!-- Clones for seamless infinite scroll -->
+            @foreach($partners as $partner)
+                <a href="{{ $partner->website_url ?: '#' }}" class="partner-item" title="{{ $partner->name }}" @if($partner->website_url && $partner->website_url !== '#') target="_blank" rel="noopener noreferrer" @endif>
+                    @if($partner->logo_path)
+                        <img src="{{ asset($partner->logo_path) }}" alt="{{ $partner->name }}" class="partner-logo-img">
+                    @else
+                        <span style="display: inline-block; width: 8px; height: 8px; background: var(--accent-gold); border-radius: 50%;"></span>
+                        <span class="partner-name">{{ $partner->name }}</span>
+                    @endif
+                </a>
+            @endforeach
+        </div>
+        <div class="partner-track">
+            @foreach($partners as $partner)
+                <a href="{{ $partner->website_url ?: '#' }}" class="partner-item" title="{{ $partner->name }}" @if($partner->website_url && $partner->website_url !== '#') target="_blank" rel="noopener noreferrer" @endif>
+                    @if($partner->logo_path)
+                        <img src="{{ asset($partner->logo_path) }}" alt="{{ $partner->name }}" class="partner-logo-img">
+                    @else
+                        <span style="display: inline-block; width: 8px; height: 8px; background: var(--accent-gold); border-radius: 50%;"></span>
+                        <span class="partner-name">{{ $partner->name }}</span>
+                    @endif
+                </a>
+            @endforeach
+            @foreach($partners as $partner)
+                <a href="{{ $partner->website_url ?: '#' }}" class="partner-item" title="{{ $partner->name }}" @if($partner->website_url && $partner->website_url !== '#') target="_blank" rel="noopener noreferrer" @endif>
+                    @if($partner->logo_path)
+                        <img src="{{ asset($partner->logo_path) }}" alt="{{ $partner->name }}" class="partner-logo-img">
+                    @else
+                        <span style="display: inline-block; width: 8px; height: 8px; background: var(--accent-gold); border-radius: 50%;"></span>
+                        <span class="partner-name">{{ $partner->name }}</span>
+                    @endif
+                </a>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     EDITORIAL STATEMENT SECTION
+     ========================================== -->
+<section class="section" style="background: radial-gradient(circle at 50% 50%, rgba(245, 166, 35, 0.04) 0%, transparent 70%);">
+    <div class="container">
+        <div style="max-width: 960px; margin: 0 auto; text-align: center;">
+            <span class="badge">The Intelligent Digital Era</span>
+            <h2 style="font-size: clamp(2.2rem, 4.5vw, 3.6rem); margin-top: 24px; margin-bottom: 28px; line-height: 1.15;">
+                We replace static software with <span class="text-gradient-gold">autonomous cognitive systems</span> that evolve in real time.
+            </h2>
+            <p style="font-size: 1.2rem; color: var(--text-muted); line-height: 1.7;">
+                From high-precision aerospace telemetry in Durgapur to financial cryptography in Bangalore, Talisha Software operates at the intersection of mathematical rigor and cinematic user experiences.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     INTERACTIVE AI SOLUTIONS SHOWCASE
+     ========================================== -->
+<section class="section" id="solutions-showcase">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge">Core Technological Pillars</span>
+            <h2 class="section-title">Engineered for Exponential Scale</h2>
+            <p class="section-desc">Explore our flagship competencies engineered to solve non-trivial computational challenges.</p>
+        </div>
+
+        <div class="tabs-nav">
+            <button class="tab-btn active" data-tab="tab-ai">🤖 Agentic AI Product Dev</button>
+            <button class="tab-btn" data-tab="tab-web3">⛓️ Web3 & Smart Contracts</button>
+            <button class="tab-btn" data-tab="tab-iot">📡 Industrial IoT & Telemetry</button>
+        </div>
+
+        <!-- Tab 1: Agentic AI -->
+        <div id="tab-ai" class="tab-content active">
+            <div class="glass-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;">
+                <div>
+                    <span class="badge" style="margin-bottom: 16px;">Autonomous Systems</span>
+                    <h3 style="font-size: 2rem; margin-bottom: 16px;">Multi-Agent Orchestration & Reasoning Graphs</h3>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 24px;">
+                        Move beyond probabilistic chatbots. We architect deterministic state graphs where autonomous LLM agents plan, execute API transactions, self-correct errors, and automate multi-system enterprise operations.
+                    </p>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px;">
+                        <li style="display: flex; align-items: center; gap: 10px; color: var(--text-secondary);">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            Self-reflective evaluation & tool-calling pipelines
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 10px; color: var(--text-secondary);">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            Vector embeddings & low-latency RAG architectures
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 10px; color: var(--text-secondary);">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            Private on-premise LLM inference with zero data leakage
+                        </li>
+                    </ul>
+                    <a href="{{ route('solutions') }}#agentic-ai" class="btn btn-primary">Discover AI Architecture</a>
+                </div>
+                <div style="background: rgba(0,0,0,0.6); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 30px; font-family: var(--font-mono); font-size: 0.85rem; color: #a3e635;">
+                    <div style="color: var(--text-dim); margin-bottom: 12px;">// Agent Execution Trace</div>
+                    <div style="color: #60a5fa;">[Agent::Planner] Resolving objective: "Reconcile multi-region ledger"</div>
+                    <div style="color: var(--accent-gold);">[Tool::Call] Querying ERP API endpoint (cluster-ap-south)...</div>
+                    <div style="color: #34d399;">[Tool::Result] 14,208 records verified against hash tree.</div>
+                    <div style="color: #f87171;">[Anomaly::Detected] Currency variance #8492 flagged.</div>
+                    <div style="color: #a78bfa;">[Agent::Resolver] Executing hedging smart contract on EVM.</div>
+                    <div style="color: #38bdf8; margin-top: 10px;">Status: SUCCESS &bull; Latency: 42ms</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Web3 -->
+        <div id="tab-web3" class="tab-content">
+            <div class="glass-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;">
+                <div>
+                    <span class="badge" style="margin-bottom: 16px; color: var(--accent-red); border-color: rgba(255,59,48,0.3);">Cryptographic Trust</span>
+                    <h3 style="font-size: 2rem; margin-bottom: 16px;">Immutable Smart Contracts & Zero-Knowledge Rollups</h3>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 24px;">
+                        Enterprise-grade smart contract design audited for mathematical security. We build decentralized custody, tokenized real-world assets (RWA), and high-frequency automated escrow channels.
+                    </p>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px;">
+                        <li style="display: flex; align-items: center; gap: 10px; color: var(--text-secondary);">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-red)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            Formal verification and gas-optimized EVM bytecode
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 10px; color: var(--text-secondary);">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-red)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            Privacy-preserving zero-knowledge proofs
+                        </li>
+                    </ul>
+                    <a href="{{ route('solutions') }}#web3" class="btn btn-primary">Explore Web3 Systems</a>
+                </div>
+                <div style="background: rgba(0,0,0,0.6); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 30px; font-family: var(--font-mono); font-size: 0.85rem; color: #38bdf8;">
+                    <div style="color: var(--text-dim); margin-bottom: 12px;">// Smart Contract Verification</div>
+                    <div style="color: #fbbf24;">contract IndustrialEscrow is ReentrancyGuard {</div>
+                    <div style="padding-left: 16px; color: #f472b6;">event EscrowFinalized(bytes32 indexed custodyHash);</div>
+                    <div style="padding-left: 16px; color: #4ade80;">function releaseUponTelemetry(bytes calldata proof) external {</div>
+                    <div style="padding-left: 32px; color: #94a3b8;">require(ZKVerifier.verify(proof), "Invalid proof");</div>
+                    <div style="padding-left: 32px; color: #60a5fa;">emit EscrowFinalized(keccak256(proof));</div>
+                    <div style="padding-left: 16px; color: #4ade80;">}</div>
+                    <div style="color: #fbbf24;">}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Industrial IoT -->
+        <div id="tab-iot" class="tab-content">
+            <div class="glass-card" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;">
+                <div>
+                    <span class="badge" style="margin-bottom: 16px; color: var(--accent-orange); border-color: rgba(255,122,26,0.3);">Physical Computing</span>
+                    <h3 style="font-size: 2rem; margin-bottom: 16px;">Edge Telemetry & SCADA Modernization</h3>
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 24px;">
+                        Bridging heavy manufacturing and hardware telemetry with cloud analytics. Real-time predictive maintenance, sensor stream anomaly detection, and sub-millisecond edge processing.
+                    </p>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px;">
+                        <li style="display: flex; align-items: center; gap: 10px; color: var(--text-secondary);">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            MQTT / OPC-UA legacy protocol adapters
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 10px; color: var(--text-secondary);">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-orange)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            Real-time 3D Digital Twin visualization
+                        </li>
+                    </ul>
+                    <a href="{{ route('solutions') }}#iot" class="btn btn-primary">Explore Industrial IoT</a>
+                </div>
+                <div style="background: rgba(0,0,0,0.6); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 30px; font-family: var(--font-mono); font-size: 0.85rem; color: #fbbf24;">
+                    <div style="color: var(--text-dim); margin-bottom: 12px;">// Telemetry Telemetry Stream</div>
+                    <div style="color: #34d399;">NODE_ID: TR-8041 (Durgapur Plant Turbine #3)</div>
+                    <div style="color: #60a5fa;">Sampling Rate: 1,000 Hz &bull; Vibration: 0.014g (Normal)</div>
+                    <div style="color: #a78bfa;">Temperature: 64.2&deg;C &bull; Thermal Drift: +0.02%</div>
+                    <div style="color: #f87171;">Edge Neural Model: Anomaly Probability &lt; 0.001%</div>
+                    <div style="color: #38bdf8; margin-top: 10px;">MQTT Broker: CONNECTED (TLS 1.3 AES-GCM)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     PREMIUM SERVICE CARDS (3D TILT)
+     ========================================== -->
+<section class="section" style="background: rgba(8, 8, 12, 0.4);">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge">Comprehensive Offerings</span>
+            <h2 class="section-title">End-to-End Technology Stack</h2>
+            <p class="section-desc">From initial mathematical modeling to resilient planetary deployments.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="glass-card tilt-card">
+                <div class="service-icon">⚡</div>
+                <h3 class="card-title">AI & Intelligent Automation</h3>
+                <p class="card-desc">
+                    Custom autonomous agent workflows, computer vision classification, predictive analytics, and natural language understanding built directly into your operations.
+                </p>
+                <a href="{{ route('solutions') }}#ai" class="card-link">
+                    Explore AI Systems
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <div class="glass-card tilt-card">
+                <div class="service-icon" style="color: var(--accent-orange); border-color: rgba(255,122,26,0.3); background: rgba(255,122,26,0.1);">🌐</div>
+                <h3 class="card-title">Smart Infrastructure & Cloud</h3>
+                <p class="card-desc">
+                    Cloud-native architectures, container orchestration, automated continuous deployment pipelines, and zero-trust security postures for zero downtime.
+                </p>
+                <a href="{{ route('solutions') }}#cloud" class="card-link">
+                    Explore Cloud DevOps
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <div class="glass-card tilt-card">
+                <div class="service-icon" style="color: var(--accent-red); border-color: rgba(255,59,48,0.3); background: rgba(255,59,48,0.1);">⚙️</div>
+                <h3 class="card-title">Industrial IoT & Modernization</h3>
+                <p class="card-desc">
+                    Hardened sensor gateways, real-time edge processing, SCADA integrations, and digital twins that elevate physical industrial assets to peak efficiency.
+                </p>
+                <a href="{{ route('solutions') }}#iot" class="card-link">
+                    Explore Industrial IoT
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     STATS COUNTER SECTION
+     ========================================== -->
+<section class="section" style="border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); background: linear-gradient(180deg, #030305, #08080c);">
+    <div class="container">
+        <div class="grid-4">
+            <div class="stat-item">
+                <div class="stat-number" data-target="50" data-suffix="+">0</div>
+                <div class="stat-label">Enterprise Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="2" data-suffix="+">0</div>
+                <div class="stat-label">Global Continents</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="80" data-suffix="+">0</div>
+                <div class="stat-label">Production Deployments</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="99" data-suffix=".9%">0</div>
+                <div class="stat-label">System Reliability SLA</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     WHY CHOOSE US (SPLIT ACCENT SECTION)
+     ========================================== -->
+<section class="section">
+    <div class="container">
+        <div class="grid-2" style="align-items: center;">
+            <div>
+                <span class="badge">The Talisha Advantage</span>
+                <h2 style="font-size: clamp(2.2rem, 4vw, 3.2rem); margin-top: 20px; margin-bottom: 24px;">
+                    Why Fortune 500 & Hypergrowth Leaders Choose Us
+                </h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.7; margin-bottom: 30px;">
+                    We are not an off-the-shelf agency. We are an elite software research and development pod that embeds alongside your leadership to solve high-stakes technological bottlenecks.
+                </p>
+                <div style="display: flex; gap: 16px;">
+                    <a href="{{ route('about') }}" class="btn btn-outline">Our Culture & Story</a>
+                    <a href="{{ route('lead.create') }}" class="btn btn-primary">Schedule Discovery</a>
+                </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <div class="glass-card" style="padding: 24px 30px;">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <span style="font-size: 1.8rem; font-weight: 800; color: var(--accent-gold);">01</span>
+                        <div>
+                            <h4 style="font-size: 1.2rem; margin-bottom: 4px;">Precision-First Architecture</h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Zero technical debt. Clean, documented, strictly typed systems built for long-term maintainability.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="padding: 24px 30px;">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <span style="font-size: 1.8rem; font-weight: 800; color: var(--accent-gold);">02</span>
+                        <div>
+                            <h4 style="font-size: 1.2rem; margin-bottom: 4px;">Dedicated Engineering Pods</h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">You work directly with senior architects, AI researchers, and systems leads—never junior middlemen.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="padding: 24px 30px;">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <span style="font-size: 1.8rem; font-weight: 800; color: var(--accent-gold);">03</span>
+                        <div>
+                            <h4 style="font-size: 1.2rem; margin-bottom: 4px;">Sub-Second Latency & High Concurrency</h4>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">Stress-tested under planetary loads to guarantee buttery smoothness and uninterrupted uptime.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     OFFICIAL TEAM ID CARDS SECTION
+     ========================================== -->
+<section class="section" id="team" style="background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.04) 0%, transparent 70%);">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge">Engineering Leaders & Creators</span>
+            <h2 class="section-title">Meet Our Team</h2>
+            <p class="section-desc">The senior architects, researchers, and specialists driving sovereign agentic technologies.</p>
+        </div>
+
+        <div class="team-id-grid">
+            @foreach($teamMembers as $member)
+                <div class="team-id-card">
+                    <!-- Top Lanyard Slot -->
+                    <div class="id-card-slot"></div>
+
+                    <!-- Brand Logo -->
+                    <div class="id-card-brand">
+                        <img src="{{ asset('img/partners/talisha_software_logo.png') }}" alt="Talisha Software" class="id-card-brand-logo" onerror="this.src='{{ asset('img/logo-light-bg.png') }}'">
+                    </div>
+
+                    <!-- Central Capsule Portrait Frame -->
+                    <div class="id-card-photo-wrapper">
+                        <div class="id-card-photo-frame">
+                            @if($member->photo)
+                                <img src="{{ asset($member->photo) }}" alt="{{ $member->name }}" class="id-card-photo-img">
+                            @else
+                                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 700; color: #3b82f6; background: #f8fafc;">
+                                    {{ substr($member->name, 0, 1) }}
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+
+                    <!-- Designation Badge -->
+                    <div class="id-card-desig">
+                        DESIG : {{ strtoupper($member->designation) }}
+                    </div>
+
+                    <!-- Name & Gradient Accent -->
+                    <div class="id-card-body">
+                        <div class="id-card-name">
+                            @php
+                                $nameParts = explode(' ', $member->name, 2);
+                            @endphp
+                            <div>{{ $nameParts[0] }}</div>
+                            @if(isset($nameParts[1]))
+                                <div>{{ $nameParts[1] }}</div>
+                            @endif
+                        </div>
+                        <div class="id-card-accent-line"></div>
+
+                        <!-- Description / Bio below photo and name -->
+                        @if($member->description)
+                            <p class="id-card-desc">
+                                {{ $member->description }}
+                            </p>
+                        @endif
+
+                        <div class="id-card-meta">
+                            <div>Employee ID: <span>{{ $member->employee_id ?: 'TS-EMP-'.str_pad($member->id, 4, '0', STR_PAD_LEFT) }}</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Footer & Multi-Color Ribbon -->
+                    <div class="id-card-footer">
+                        Enterprise Software · AI · Cloud Solutions
+                    </div>
+                    <div class="id-card-ribbon"></div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     LATEST ARTICLES & INSIGHTS
+     ========================================== -->
+<section class="section" style="background: rgba(8, 8, 12, 0.4);">
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; flex-wrap: wrap; gap: 20px;">
+            <div>
+                <span class="badge">Engineering Knowledge Hub</span>
+                <h2 class="section-title" style="margin-bottom: 8px;">Recent Articles & Research</h2>
+                <p class="section-desc">Deep-dive technical perspectives from our engineering directors.</p>
+            </div>
+            <a href="{{ route('articles.index') }}" class="btn btn-outline">
+                View All Articles
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+
+        <div class="grid-3">
+            @foreach($articles as $art)
+                <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                            <span class="badge" style="font-size: 0.75rem;">{{ $art->category->name ?? 'Research' }}</span>
+                            <span style="font-size: 0.85rem; color: var(--text-dim);">{{ $art->reading_time }} min read</span>
+                        </div>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 14px; line-height: 1.35;">
+                            <a href="{{ route('articles.show', $art->slug) }}" style="color: #fff;">{{ $art->title }}</a>
+                        </h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">
+                            {{ $art->excerpt }}
+                        </p>
+                    </div>
+                    <div>
+                        <a href="{{ route('articles.show', $art->slug) }}" class="card-link">
+                            Read Full Article
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     CINEMATIC CTA BANNER
+     ========================================== -->
+<section class="section" style="position: relative; overflow: hidden; padding: 140px 0; background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(255, 59, 48, 0.12), transparent 70%);">
+    <div class="container" style="text-align: center; position: relative; z-index: 2;">
+        <span class="badge" style="margin-bottom: 20px;">Ready for World-Class Execution?</span>
+        <h2 style="font-size: clamp(2.5rem, 5.5vw, 4.4rem); max-width: 880px; margin: 0 auto 24px; line-height: 1.1;">
+            Transform Your Vision Into High-Velocity Reality.
+        </h2>
+        <p style="color: var(--text-secondary); font-size: 1.25rem; max-width: 660px; margin: 0 auto 40px; line-height: 1.65;">
+            Speak directly with our technology leaders to scope timelines, evaluate architectures, and accelerate your time-to-market.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="{{ route('lead.create') }}" class="btn btn-primary" style="padding: 16px 36px; font-size: 1.05rem;">
+                Initiate Project Discovery
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+918001087752" class="btn btn-outline" style="padding: 16px 32px; font-size: 1.05rem;">
+                Call +91 8001087752
+            </a>
+        </div>
+    </div>
+</section>
+@endsection
