@@ -1301,42 +1301,47 @@ textarea.form-control {
 }
 
 .id-card-desig {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 0.60rem;
-  font-weight: 700;
-  letter-spacing: 0.10em;
+  font-family: var(--font-main);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #0f172a;
-  text-align: center;
-  margin-top: 4px;
-  margin-bottom: 6px;
+  text-align: left;
+  padding: 0 16px;
+  margin-top: 6px;
+  margin-bottom: 4px;
 }
 
 .id-card-body {
   padding: 0 16px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .id-card-name {
-  font-size: 1.32rem;
-  font-weight: 800;
-  line-height: 1.05;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 750;
+  line-height: 1.1;
   color: #0f172a;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
 }
 
 .id-card-accent-line {
   width: 28px;
-  height: 2px;
+  height: 2.5px;
   border-radius: 4px;
   background: linear-gradient(90deg, #3b82f6 0%, #ec4899 50%, #f59e0b 100%);
   margin: 5px 0 7px;
 }
 
 .id-card-desc {
-  font-size: 0.70rem;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
   color: #475569;
-  line-height: 1.38;
+  line-height: 1.35;
   margin-bottom: 6px;
 }
 
@@ -2242,29 +2247,35 @@ textarea.form-control {
   }
 
   .id-card-desig {
-    font-size: 0.56rem;
-    letter-spacing: 0.08em;
-    margin-top: 3px;
-    margin-bottom: 5px;
+    font-size: 0.52rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-align: left;
+    padding: 0 12px;
+    margin-top: 4px;
+    margin-bottom: 3px;
   }
 
   .id-card-body {
     padding: 0 12px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
   }
 
   .id-card-name {
-    font-size: 1.15rem;
-    line-height: 1.05;
+    font-size: 1.02rem;
+    line-height: 1.08;
   }
 
   .id-card-accent-line {
-    margin: 4px 0 6px;
+    margin: 4px 0 5px;
     width: 24px;
   }
 
   .id-card-desc {
-    font-size: 0.66rem;
-    line-height: 1.35;
+    font-size: 0.62rem;
+    line-height: 1.32;
   }
 
   .id-card-footer {
