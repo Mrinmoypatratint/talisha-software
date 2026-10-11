@@ -19,7 +19,10 @@ class SettingController extends Controller
         $data = $request->except(['_token', '_method']);
 
         foreach ($data as $key => $value) {
-            Setting::where('key', $key)->update(['value' => $value]);
+            Setting::updateOrCreate(
+                ['key' => $key],
+                ['value' => $value]
+            );
         }
 
         return back()->with('success', 'System settings saved successfully!');

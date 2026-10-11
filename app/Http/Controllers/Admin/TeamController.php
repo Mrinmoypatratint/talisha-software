@@ -125,7 +125,7 @@ class TeamController extends Controller
     {
         if ($team->photo && File::exists(public_path($team->photo)) && str_contains($team->photo, 'img/team/')) {
             // Delete if not a core seeded asset
-            if (!in_array(basename($team->photo), ['krishiv_dutta.png', 'abir_ghosh.png', 'pijush_pal.png', 'shreya_sarkar.png', 'mantar_singh.png'])) {
+            if (!in_array(basename($team->photo), ['krishiv_dutta.png', 'abir_ghosh.png', 'pijush_pal.png', 'shreya_sarkar.png', 'mantar_singh.png', 'mrinmoy_patra.png'])) {
                 File::delete(public_path($team->photo));
             }
         }
