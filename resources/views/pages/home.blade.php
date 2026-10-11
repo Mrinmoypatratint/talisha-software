@@ -128,9 +128,9 @@
 <section class="section" id="solutions-showcase">
     <div class="container">
         <div class="section-header">
-            <span class="badge">Core Technological Pillars</span>
+            <span class="capabilities-badge">OUR CORE CAPABILITIES</span>
             <h2 class="section-title">Engineered for Exponential Scale</h2>
-            <p class="section-desc">Explore our flagship competencies engineered to solve non-trivial computational challenges.</p>
+            <p class="section-desc">A complete ecosystem to design, deploy and scale autonomous AI systems.</p>
         </div>
 
         <div class="tabs-nav">
@@ -139,39 +139,117 @@
             <button class="tab-btn" data-tab="tab-iot">📡 Industrial IoT & Telemetry</button>
         </div>
 
-        <!-- Tab 1: Agentic AI -->
+        <!-- Tab 1: Agentic AI — Featured Capability Showcase -->
         <div id="tab-ai" class="tab-content active">
-            <div class="glass-card tab-showcase-card">
+            <div class="featured-solution-card">
+                <!-- Left Column: Details & Checklist -->
                 <div>
-                    <span class="badge" style="margin-bottom: 16px;">Autonomous Systems</span>
-                    <h3 style="font-size: 2rem; margin-bottom: 16px;">Multi-Agent Orchestration & Reasoning Graphs</h3>
-                    <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 24px;">
-                        Move beyond probabilistic chatbots. We architect deterministic state graphs where autonomous LLM agents plan, execute API transactions, self-correct errors, and automate multi-system enterprise operations.
+                    <span class="featured-solution-tag">FEATURED SOLUTION</span>
+                    <h3 class="featured-solution-title">Multi-Agent Orchestration & Reasoning Graphs</h3>
+                    <p class="featured-solution-desc">
+                        Build, orchestrate and monitor multiple AI agents that collaborate, reason and take action — designed for complex enterprise workflows.
                     </p>
-                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px;">
-                        <li style="display: flex; align-items: center; gap: 10px; color: var(--text-secondary);">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                            Self-reflective evaluation & tool-calling pipelines
+
+                    <ul class="featured-solution-checklist">
+                        <li class="featured-solution-item">
+                            <span class="featured-check-badge">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            </span>
+                            Agent planning and tool use
                         </li>
-                        <li style="display: flex; align-items: center; gap: 10px; color: var(--text-secondary);">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                            Vector embeddings & low-latency RAG architectures
+                        <li class="featured-solution-item">
+                            <span class="featured-check-badge">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            </span>
+                            Multi-agent collaboration graphs
                         </li>
-                        <li style="display: flex; align-items: center; gap: 10px; color: var(--text-secondary);">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                            Private on-premise LLM inference with zero data leakage
+                        <li class="featured-solution-item">
+                            <span class="featured-check-badge">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg>
+                            </span>
+                            Real-time monitoring and guardrails
                         </li>
                     </ul>
-                    <a href="{{ route('solutions') }}#agentic-ai" class="btn btn-primary">Discover AI Architecture</a>
+
+                    <a href="{{ route('solutions') }}" class="btn-explore-solutions">
+                        Explore Our AI Solutions <span style="font-size: 1.1rem; line-height: 1;">&rarr;</span>
+                    </a>
                 </div>
-                <div class="terminal-code-box">
-                    <div style="color: var(--text-dim); margin-bottom: 12px;">// Agent Execution Trace</div>
-                    <div style="color: #60a5fa;">[Agent::Planner] Resolving objective: "Reconcile multi-region ledger"</div>
-                    <div style="color: var(--accent-gold);">[Tool::Call] Querying ERP API endpoint (cluster-ap-south)...</div>
-                    <div style="color: #34d399;">[Tool::Result] 14,208 records verified against hash tree.</div>
-                    <div style="color: #f87171;">[Anomaly::Detected] Currency variance #8492 flagged.</div>
-                    <div style="color: #a78bfa;">[Agent::Resolver] Executing hedging smart contract on EVM.</div>
-                    <div style="color: #38bdf8; margin-top: 10px;">Status: SUCCESS &bull; Latency: 42ms</div>
+
+                <!-- Right Column: Code Window + 3 Agent Nodes Diagram -->
+                <div class="orchestration-preview">
+                    <!-- Python Code Window -->
+                    <div class="code-editor-box">
+                        <div class="code-editor-titlebar">
+                            <span class="code-dot" style="background: #ff5f56;"></span>
+                            <span class="code-dot" style="background: #ffbd2e;"></span>
+                            <span class="code-dot" style="background: #27c93f;"></span>
+                            <span class="code-title">Agent Workflow</span>
+                        </div>
+                        <div style="color: #06b6d4; margin-bottom: 8px;"># Orchestrate multiple agents for a business task</div>
+                        <div><span style="color: #e2e8f0;">workflow</span> <span style="color: #94a3b8;">=</span> <span style="color: #38bdf8;">AgentGraph</span>()</div>
+                        <div><span style="color: #e2e8f0;">researcher</span> <span style="color: #94a3b8;">=</span> <span style="color: #38bdf8;">Agent</span>(<span style="color: #cbd5e1;">role</span>=<span style="color: #ff5500;">"research"</span>)</div>
+                        <div><span style="color: #e2e8f0;">analyst</span> <span style="color: #94a3b8;">=</span> <span style="color: #38bdf8;">Agent</span>(<span style="color: #cbd5e1;">role</span>=<span style="color: #ff5500;">"analysis"</span>)</div>
+                        <div><span style="color: #e2e8f0;">executor</span> <span style="color: #94a3b8;">=</span> <span style="color: #38bdf8;">Agent</span>(<span style="color: #cbd5e1;">role</span>=<span style="color: #ff5500;">"execution"</span>)</div>
+                        <div style="margin-top: 10px;"><span style="color: #e2e8f0;">workflow</span>.<span style="color: #f5a623;">add</span>(<span style="color: #cbd5e1;">researcher</span> <span style="color: #f5a623;">&gt;&gt;</span> <span style="color: #cbd5e1;">analyst</span> <span style="color: #f5a623;">&gt;&gt;</span> <span style="color: #cbd5e1;">executor</span>)</div>
+                        <div><span style="color: #e2e8f0;">result</span> <span style="color: #94a3b8;">=</span> <span style="color: #e2e8f0;">workflow</span>.<span style="color: #f5a623;">run</span>(<span style="color: #34d399;">"Market expansion analysis"</span>)</div>
+                        <div><span style="color: #f5a623;">print</span>(<span style="color: #e2e8f0;">result</span>)</div>
+                    </div>
+
+                    <!-- Branch Connector -->
+                    <div class="workflow-tree-connector">
+                        <svg width="28" height="190" viewBox="0 0 28 190" fill="none">
+                            <path d="M 0 95 H 12 V 24 H 28" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M 12 95 H 28" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M 12 95 V 166 H 28" stroke="#334155" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+
+                    <!-- 3 Agent Nodes Column -->
+                    <div class="workflow-diagram-col">
+                        <!-- Node 1: Research Agent -->
+                        <div class="workflow-agent-node">
+                            <div class="node-icon-wrapper" style="background: rgba(16, 185, 129, 0.12); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.25);">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                            </div>
+                            <div class="node-text-content">
+                                Research
+                                <span>Agent</span>
+                            </div>
+                        </div>
+
+                        <!-- Connector Arrow 1 -->
+                        <div class="workflow-arrow-down">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                        </div>
+
+                        <!-- Node 2: Analysis Agent -->
+                        <div class="workflow-agent-node">
+                            <div class="node-icon-wrapper" style="background: rgba(6, 182, 212, 0.12); color: #06b6d4; border: 1px solid rgba(6, 182, 212, 0.25);">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                            </div>
+                            <div class="node-text-content">
+                                Analysis
+                                <span>Agent</span>
+                            </div>
+                        </div>
+
+                        <!-- Connector Arrow 2 -->
+                        <div class="workflow-arrow-down">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                        </div>
+
+                        <!-- Node 3: Execution Agent -->
+                        <div class="workflow-agent-node">
+                            <div class="node-icon-wrapper" style="background: rgba(168, 85, 247, 0.12); color: #a855f7; border: 1px solid rgba(168, 85, 247, 0.25);">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                            </div>
+                            <div class="node-text-content">
+                                Execution
+                                <span>Agent</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
