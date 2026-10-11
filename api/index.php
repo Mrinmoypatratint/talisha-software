@@ -19,11 +19,29 @@ foreach ($storageDirs as $dir) {
     }
 }
 
-// Copy seeded SQLite database to /tmp if not yet present
+// Force HTTPS in serverless environment to prevent mixed-content blocking
+$_SERVER['HTTPS'] = 'on';
+$_SERVER['SERVER_PORT'] = 443;
+
+// Copy seeded SQLite database to /tmp if not yet present, empty, or missing tables
 $targetDb = $tmp . '/database.sqlite';
 $sourceDb = __DIR__ . '/../database/database.sqlite';
 
-if (!file_exists($targetDb) && file_exists($sourceDb)) {
+$needsInit = !file_exists($targetDb) || @filesize($targetDb) === 0;
+
+if (!$needsInit && file_exists($targetDb)) {
+    try {
+        $pdo = new PDO('sqlite:' . $targetDb);
+        $res = $pdo->query("SELECT name FROM sqlite_master WHERE type='table' AND name='partners'")->fetch();
+        if (!$res) {
+            $needsInit = true;
+        }
+    } catch (\Throwable $e) {
+        $needsInit = true;
+    }
+}
+
+if ($needsInit && file_exists($sourceDb) && @filesize($sourceDb) > 0) {
     @copy($sourceDb, $targetDb);
     @chmod($targetDb, 0666);
 } elseif (!file_exists($targetDb)) {

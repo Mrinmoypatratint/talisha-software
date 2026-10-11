@@ -19,7 +19,9 @@
   ],
   "env": {
     "APP_ENV": "production",
-    "APP_DEBUG": "true",
+    "APP_DEBUG": "false",
+    "APP_URL": "https://talisha-software.vercel.app",
+    "ASSET_URL": "https://talisha-software.vercel.app",
     "APP_KEY": "base64:0gHdv5D5KniQfmIIqwZZN4R1JBGdVSlfVsM9curtJJw=",
     "APP_CONFIG_CACHE": "/tmp/config.php",
     "APP_EVENTS_CACHE": "/tmp/events.php",
