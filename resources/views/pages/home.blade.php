@@ -503,13 +503,6 @@
                             @endif
                         </div>
                         <div class="id-card-accent-line"></div>
-
-                        <!-- Description / Bio below photo and name -->
-                        @if($member->description)
-                            <p class="id-card-desc">
-                                {{ $member->description }}
-                            </p>
-                        @endif
                     </div>
 
                     <!-- Footer & Multi-Color Ribbon -->
